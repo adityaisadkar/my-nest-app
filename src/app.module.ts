@@ -23,11 +23,12 @@ import { UserModule } from './user/user.module';
 import { User2Module } from './user2/user2.module';
 import { TeacherModule } from './teacher/teacher.module';
 import { ProjectModule } from './project/project.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [EmployeeModule, CategoryModule, StudentModule, CustomerModule, ConfigModule.forRoot({
     isGlobal: true,
-  }), MongooseModule.forRoot(process.env.MONGO_URL!), NewStudentModule, UserModule, User2Module, TeacherModule, ProjectModule],
+  }), MongooseModule.forRoot(process.env.MONGO_URL!), NewStudentModule, UserModule, User2Module, TeacherModule, ProjectModule, AuthModule],
   controllers: [AppController, ProductController, MynameController, UserRolesController, ExceptionController, DatabaseController, EnvController],
   providers: [AppService, ProductService, DatabaseService, EnvService],
 })
